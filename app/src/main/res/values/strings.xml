@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">P05_NDP_SONGS</string>
+    <string name="title">Song Title</string>
+    <string name="singers">Singers</string>
+    <string name="year">Year</string>
+    <string name="hintTitle">Enter a song title here</string>
+    <string name="hintSinger">Enter singers name here</string>
+    <string name="hintYear">Enter year of release here</string>
+
+    <string name="insert">insert</string>
+    <string name="show">show list</string>
+</resources>
