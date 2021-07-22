@@ -21,8 +21,11 @@ public class MainActivity extends AppCompatActivity {
     EditText etYear;
     Button btnInsert;
     Button btnShow;
+    ListView lv;
     ArrayList<songs> al;
     ArrayAdapter<songs> aa;
+
+    sg.edu.rp.c346.id20031826.p05_ndp_songs.CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         etYear = findViewById(R.id.etYear);
         btnInsert = findViewById(R.id.btnInsert);
         btnShow = findViewById(R.id.btnShow);
+        lv = findViewById(R.id.lv);
+
+        adapter = new sg.edu.rp.c346.id20031826.p05_ndp_songs.CustomAdapter(this, R.layout.row, al);
+        lv.setAdapter(adapter);
 
         btnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (inserted_title != -1 && inserted_singer != -1 && inserted_year != -1){ //if not equal to -1 then clear, get all songs
                     al.clear();
-                    al.addAll(dbh.getAllSongs());
+                    al.addAll(dbh.getAllsongs());
                     aa.notifyDataSetChanged();
                     Toast.makeText(MainActivity.this, "Insert successful",
                             Toast.LENGTH_SHORT).show();

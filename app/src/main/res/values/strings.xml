@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">P05_NDP_SONGS</string>
+    <string name="titleRow">title</string>
+    <string name="singerRow">row</string>
     <string name="title">Song Title</string>
     <string name="singers">Singers</string>
     <string name="year">Year</string>

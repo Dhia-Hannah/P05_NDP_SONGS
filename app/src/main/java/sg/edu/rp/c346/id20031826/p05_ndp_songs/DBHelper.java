@@ -125,27 +125,27 @@ public class DBHelper extends SQLiteOpenHelper {
         return result;
     }
 
-    public ArrayList<songs> getAllSongs(String keyword) {
-        ArrayList<songs> notes = new ArrayList<songs>();
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        String[] columns= {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR};
-        String condition = COLUMN_TITLE + " Like ?";
-        String[] args = { "%" +  keyword + "%"};
-        Cursor cursor = db.query(TABLE_SONGS, columns, condition, args,
-                null, null, null, null);
-
-        if (cursor.moveToFirst()) {
-            do {
-                String title = cursor.getString(0);
-                String singers = cursor.getString(1);
-                int years = cursor.getInt(2);
-                songs note = new songs(title, singers, years);
-                notes.add(note);
-            } while (cursor.moveToNext());
-        }
-        cursor.close();
-        db.close();
-        return notes;
-    }
+//    public ArrayList<songs> getAllSongs(String keyword) {
+//        ArrayList<songs> notes = new ArrayList<songs>();
+//
+//        SQLiteDatabase db = this.getReadableDatabase();
+//        String[] columns= {COLUMN_ID, COLUMN_TITLE, COLUMN_SINGERS, COLUMN_YEAR};
+//        String condition = COLUMN_TITLE + " Like ?";
+//        String[] args = { "%" +  keyword + "%"};
+//        Cursor cursor = db.query(TABLE_SONGS, columns, condition, args,
+//                null, null, null, null);
+//
+//        if (cursor.moveToFirst()) {
+//            do {
+//                String title = cursor.getString(0);
+//                String singers = cursor.getString(1);
+//                int years = cursor.getInt(2);
+//                songs note = new songs(title, singers, years);
+//                notes.add(note);
+//            } while (cursor.moveToNext());
+//        }
+//        cursor.close();
+//        db.close();
+//        return notes;
+//    }
 }
